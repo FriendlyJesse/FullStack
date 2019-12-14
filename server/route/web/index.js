@@ -130,5 +130,13 @@ module.exports = app => {
       res.send(data)
     })
 
+    .get('/heroes/:id', async (req, res) => {
+      let data = await Hero.findById(req.params.id).lean()
+      // data.related = await Article.find().where({
+      //   categories: {$in: data.categories}
+      // }).limit(2)
+      res.send(data)
+    })
+
   app.use('/web/api/', router)
 }

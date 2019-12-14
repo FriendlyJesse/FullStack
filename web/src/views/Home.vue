@@ -42,10 +42,10 @@
     <v-list-card title="英雄列表" icon="hero" :categories="heroCates">
       <template #items="{category}">
         <div class="d-flex flex-wrap" style="margin: 0 -.5rem">
-          <div class="py-2 text-center p-2" style="width: 20%" v-for="(el, n) in category.heroList" :key="n">
+          <router-link :to="`/heroes/${el._id}`" tag="div" class="py-2 text-center p-2" style="width: 20%" v-for="(el, n) in category.heroList" :key="n">
             <img class="w-100" :src="el.avatar">
             <span>{{el.name}}</span>
-          </div>
+          </router-link>
         </div>
       </template>
     </v-list-card>

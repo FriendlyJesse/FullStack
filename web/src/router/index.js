@@ -20,6 +20,12 @@ const routes = [
         component: () => import('../views/Article')
       }
     ]
+  },
+  {
+    path: '/heroes/:id',
+    name: 'hero',
+    props: true,
+    component: () => import('../views/Hero')
   }
 ]
 
